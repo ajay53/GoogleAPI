@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.googleapi.model.books.Item" />
+
+        <import type="com.example.googleapi.utility.Util" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:background="#dee2fc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:id="@+id/imgBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:maxHeight="150dp"
+                android:minHeight="150dp"
+                app:imageUrl="@{item.volumeInfo.imageLinks.thumbnail}" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgBook"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{item.volumeInfo.title}" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTitle"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <RatingBar
+                    android:id="@+id/rating"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="@{item.volumeInfo.averageRating}"
+                    android:theme="@style/RatingBar" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@{Util.getPrice(item)}" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
