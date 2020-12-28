@@ -17,6 +17,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
 import com.example.googleapi.R;
@@ -40,6 +41,8 @@ public class BooksFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         init();
     }
 
@@ -60,6 +63,7 @@ public class BooksFragment extends Fragment {
     }
 
     private void initializeViews(View root) {
+
         llBooks = root.findViewById(R.id.llBooks);
         ProgressBar progressBar = root.findViewById(R.id.progressBar);
 

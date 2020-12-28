@@ -50,6 +50,10 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
 
         holder.tvTitle.setText(articles.get(position).getTitle());
         holder.tvSource.setText(articles.get(position).getSource().getName());
+
+        if (position == articles.size() - 1) {
+            holder.listDivider.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -63,6 +67,7 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
         public ImageView imgNews;
         public TextView tvTitle;
         public TextView tvSource;
+        public View listDivider;
 
         public ViewHolder(@NonNull View itemView, OnItemCLickListener onItemCLickListener) {
 
@@ -70,6 +75,7 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
             tvSource = itemView.findViewById(R.id.tvSource);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             imgNews = itemView.findViewById(R.id.imgNews);
+            listDivider = itemView.findViewById(R.id.listDivider);
 
             this.onItemCLickListener = onItemCLickListener;
             itemView.setOnClickListener(this);

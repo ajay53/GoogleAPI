@@ -12,9 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="?attr/actionBarSize"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="?attr/actionBarSize"
         app:layoutManager="LinearLayoutManager"
         tools:context=".view.HomeFragment"
         tools:listitem="@layout/news_list_item" />

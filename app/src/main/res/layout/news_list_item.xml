@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_marginTop="5dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp">
 
     <LinearLayout
         android:id="@+id/llParent"
@@ -39,21 +40,28 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imgNews"
+        <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_weight="0.1"
-            android:maxWidth="140dp"
-            android:maxHeight="140dp"
-            android:minWidth="120dp"
-            android:minHeight="100dp" />
+            app:cardCornerRadius="8dp">
 
+            <ImageView
+                android:id="@+id/imgNews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:background="@color/cardview_dark_background"
+                android:maxWidth="140dp"
+                android:maxHeight="140dp"
+                android:minWidth="120dp"
+                android:minHeight="100dp" />
 
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
     <View
+        android:id="@+id/listDivider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/llParent"
