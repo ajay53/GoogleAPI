@@ -28,7 +28,7 @@ public class BooksViewModel extends ViewModel {
     }
 
     public void getBooksApi() {
-        Log.d(TAG, "getProductsApi: ");
+        Log.d(TAG, "getBooksApi: ");
 
         Call<BooksVolume> booksCall = BooksWebServiceClient.booksApi.getBooks("search+terms");
 
@@ -46,7 +46,6 @@ public class BooksViewModel extends ViewModel {
             @Override
             public void onFailure(@NonNull Call<BooksVolume> call, @NonNull Throwable t) {
                 Log.e(TAG, "onFailure: " + t.getMessage());
-//                getBooksApi();
             }
         });
     }
