@@ -3,6 +3,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('D:\\Default\\Java\\Android\\example.keystore')
+            storePassword 'Samurai'
+            keyPassword 'Samurai'
+            keyAlias 'example'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
